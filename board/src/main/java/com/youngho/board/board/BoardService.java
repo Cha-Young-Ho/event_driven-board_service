@@ -23,4 +23,8 @@ public class BoardService {
         return board;
     }
 
+    public Mono<Board> getBoard(String boardId){
+        return boardRepository.findById(boardId);
+    }
+
 }
