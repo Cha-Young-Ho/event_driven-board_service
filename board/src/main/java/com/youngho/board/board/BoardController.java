@@ -1,14 +1,8 @@
 package com.youngho.board.board;
 
 import com.youngho.board.board.dto.BoardOfCreate;
-import com.youngho.board.common.response.Response;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
-import reactor.core.publisher.Flux;
+import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RequiredArgsConstructor
@@ -27,8 +21,9 @@ public class BoardController {
     /**
      * 글 조회
      */
+    @GetMapping("/board")
+    public Mono<Board> getBoard(@RequestParam String boardId){
+        return boardService.getBoard(boardId);
+    }
 
-    /**
-     * 글 수정
-     */
 }
