@@ -1,2 +1,11 @@
-package com.youngho.board.board;public class BoardService {
+package com.youngho.board.board;
+
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@RequiredArgsConstructor
+@Service
+public class BoardService {
+    private final BoardRepository boardRepository;
+
 }
